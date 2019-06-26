@@ -44,19 +44,23 @@ public class DragonSaddleSizeEstimator {
      */
     public Double estimateSaddleSizeInCentiMeters(int targetYear) throws Exception {
         double roundedSaddleSize = calculateSaddleSizeFromYear(targetYear);
-
-        // slow down the magic
-        try {
-            Thread.sleep(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            throw e;
-        }
+        enterAProgrammaticTrance();
 
         // Verify that we have a valid saddle size
         verifier.verify(roundedSaddleSize);
 
         return roundedSaddleSize;
+    }
+
+    private void enterAProgrammaticTrance() throws InterruptedException {
+        // slow down the magic
+        try {
+            // Pause for ONE second
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     private double calculateSaddleSizeFromYear(int targetYear) {
