@@ -6,7 +6,6 @@ package com.openclassrooms.debugging;
  * @Author Kal Issy
  */
 public class DragonSaddleSizeEstimator {
-
     /**
      * The universal constant which is 42.
     */
