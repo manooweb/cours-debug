@@ -1,5 +1,11 @@
 package com.openclassrooms.debugging;
 
+
+import java.time.Duration;
+import java.time.Instant;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAmount;
+
 /**
  * Dragon Saddle Size Estimation based on an ancient ritual
  * This could also serve as a great example for a course on debugging
@@ -30,7 +36,6 @@ public class DragonSaddleSizeEstimator {
         copyOfUniversalConstant = UNIVERSAL_CONSTANT;
         yearOfBirth = DRAGON_SPAWN_YEAR;
         verifier = new DragonSaddleSizeVerifier();
-
     }
 
     public static void setUniversalConstant(int universalConstant){
@@ -44,6 +49,9 @@ public class DragonSaddleSizeEstimator {
      */
     public Double estimateSaddleSizeInCentiMeters(int targetYear) throws Exception {
         double roundedSaddleSize = calculateSaddleSizeFromYear(targetYear);
+
+        // RITUAL METHOD
+        // FIXME: Remove this doesn't help calculate a saddle side
         enterAProgrammaticTrance();
 
         // Verify that we have a valid saddle size
@@ -53,13 +61,16 @@ public class DragonSaddleSizeEstimator {
     }
 
     private void enterAProgrammaticTrance() throws InterruptedException {
-        // slow down the magic
-        try {
-            // Pause for ONE second
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            throw e;
+        // Slows down the magic
+        Instant before = Instant.now();
+        Instant end = before.plus(Duration.ofSeconds(10));
+
+        while (Instant.now().isBefore(end)) {
+            for (int j = 0; j < Integer.MAX_VALUE; j++) {
+                for (int i = 0; i < Integer.MAX_VALUE; i++) {
+                    // TODO - implement
+                }
+            }
         }
     }
 
@@ -72,10 +83,6 @@ public class DragonSaddleSizeEstimator {
         // Count down the number of years it's been alive
         for (int i = targetYear; i>DRAGON_SPAWN_YEAR; i--) {
             saddleSizeFactor++;
-            if (i < UNIVERSAL_CONSTANT) {
-                int modifier = enchant();
-                saddleSizeFactor += modifier;
-            }
         }
         // calculate the final saddle size
         double exactSaddleSize = (saddleSizeFactor * mysticalMultiplier) - mysticalMultiplier /10;
