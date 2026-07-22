@@ -3,22 +3,23 @@ plugins {
     id 'application'
 }
 
-group 'com.openclassrooms.debugging'
-version '1.0-SNAPSHOT'
+group = 'com.openclassrooms.debugging'
+version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 application {
-    mainClassName = 'com.openclassrooms.debugging.DragonSaddleSizeGuesser'
+    mainClass = 'com.openclassrooms.debugging.DragonSaddleSizeGuesser'
 }
+
 jar {
     manifest {
         attributes 'Main-Class': 'com.openclassrooms.debugging.DragonSaddleSizeGuesser'
@@ -26,10 +27,11 @@ jar {
 }
 
 dependencies {
-    testCompile("org.junit.jupiter:junit-jupiter-api:5.5.0-RC1")
-    testCompile("org.junit.jupiter:junit-jupiter-engine:5.5.0-RC1")
-    testCompile("org.hamcrest:hamcrest-core:2.1")
-    testCompile("org.mockito:mockito-junit-jupiter:2.23.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.0-RC1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.5.0-RC1")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.5.0-RC1")
+    testImplementation("org.hamcrest:hamcrest-core:2.1")
+    testImplementation("org.mockito:mockito-junit-jupiter:2.23.0")
 }
 
 test {
