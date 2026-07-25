@@ -50,10 +50,6 @@ public class DragonSaddleSizeEstimator {
     public Double estimateSaddleSizeInCentiMeters(int targetYear) throws Exception {
         double roundedSaddleSize = calculateSaddleSizeFromYear(targetYear);
 
-        // RITUAL METHOD
-        // FIXME: Remove this doesn't help calculate a saddle side
-        enterAProgrammaticTrance();
-
         // Verify that we have a valid saddle size
         verifier.verify(roundedSaddleSize);
 
