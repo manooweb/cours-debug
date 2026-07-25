@@ -7,22 +7,21 @@ package com.openclassrooms.debugging;
  */
 public class DragonSaddleSizeEstimator {
 
-    // Singleton instance of the Dragon Size Estimator
-    public static final DragonSaddleSizeEstimator INSTANCE = new DragonSaddleSizeEstimator();
-
     /**
      * The universal constant which is 42.
-     */
-    public static int UNIVERSAL_CONSTANT = 42;
+    */
+   public static int UNIVERSAL_CONSTANT = 42;
 
-    // The year when dragons were first spawned on Earth in 1 AD
-    public static final int DRAGON_SPAWN_YEAR = 1;
+   // The year when dragons were first spawned on Earth in 1 AD
+   public static final int DRAGON_SPAWN_YEAR = 1;
 
-    /**
-     * This number is lucky to dragons.
-     */
-    public static final int UNIVERSAL_LUCKY_NUMBER = 41;
+   /**
+    * This number is lucky to dragons.
+   */
+  public static final int UNIVERSAL_LUCKY_NUMBER = 41;
 
+  // Singleton instance of the Dragon Size Estimator
+  public static final DragonSaddleSizeEstimator INSTANCE = new DragonSaddleSizeEstimator();
 
     private int copyOfUniversalConstant;
     private int yearOfBirth;
