@@ -129,6 +129,17 @@ La validation de cette étape est effectuée avec :
 ./gradlew clean build --warning-mode all --no-daemon
 ```
 
+## Étape 10 — Mise à jour vers Gradle 9.6.1
+
+Le Gradle Wrapper utilise désormais Gradle 9.6.1. Cette version est compatible
+avec Spring Boot 4.1.0 et s'exécute avec le JDK 21.
+
+La validation de cette étape est effectuée avec :
+
+```bash
+./gradlew clean build --warning-mode all --no-daemon
+```
+
 # Le bug qui a vaincu un dragon
 Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait.
 
