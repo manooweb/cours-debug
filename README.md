@@ -87,6 +87,22 @@ PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:$PATH \
 ./gradlew clean build --warning-mode all --no-daemon
 ```
 
+## Étape 7 — Mise à jour vers Gradle 8.14.3 et JDK 21
+
+Le Gradle Wrapper utilise désormais Gradle 8.14.3. Cette version permet
+d'exécuter Gradle avec le JDK 21, compatible avec Spring Boot 2.7.18.
+
+La configuration Gradle utilise aussi les API modernes `java` et `application`.
+Le lanceur JUnit Platform est déclaré explicitement afin de supprimer les
+dépréciations propres au build. L'avertissement restant provient du plugin
+Spring Boot 2.7 et sera traité lors de la migration Spring Boot suivante.
+
+La validation de cette étape est effectuée avec :
+
+```bash
+./gradlew clean build --warning-mode all --no-daemon
+```
+
 # Le bug qui a vaincu un dragon
 Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait.
 
