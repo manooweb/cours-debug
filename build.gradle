@@ -13,6 +13,8 @@ repositories {
 
 sourceCompatibility = 1.8
 
+mainClassName = 'com.openclassrooms.debugging.DragonSaddleSizeGuesserApp'
+
 repositories {
     mavenCentral()
 }
