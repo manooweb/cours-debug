@@ -16,6 +16,23 @@ La validation de cette étape est effectuée avec :
 ./gradlew clean build
 ```
 
+## Étape 2 — Mise à jour vers Gradle 5.6.4
+
+Le Gradle Wrapper utilise désormais Gradle 5.6.4, dernière version de Gradle
+5 compatible avec Spring Boot 2.1.18.
+
+Gradle 4.10.3 fonctionnait avec le JDK 21. Gradle 5.6.4 doit toutefois être
+exécuté avec un JDK 11 : le retour temporaire à ce JDK est une contrainte de
+cette étape de migration, car le build ne fonctionne pas encore avec le JDK 21.
+
+La validation de cette étape est effectuée avec :
+
+```bash
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 \
+PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:$PATH \
+./gradlew clean build --no-daemon
+```
+
 # Le bug qui a vaincu un dragon
 Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait. 
 
@@ -43,5 +60,3 @@ Cela démarrera votre application.
 
 * Visit http://localhost:9999/dragon/size pour voir le calcul pour l'année en cours
 * Visit http://localhost:9999/dragon/size/year/2019 pour voir le calcul pour l'année 2019.
-
-
