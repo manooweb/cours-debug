@@ -73,6 +73,20 @@ PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:$PATH \
 ./gradlew clean build --warning-mode all --no-daemon
 ```
 
+## Étape 6 — Mise à jour vers Spring Boot 2.7.18
+
+L'application utilise désormais Spring Boot `2.7.18`, dernière version
+corrective de la ligne 2.x. Gradle 6.8.3 reste exécuté avec le JDK 11 à cette
+étape.
+
+La validation de cette étape est effectuée avec :
+
+```bash
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 \
+PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:$PATH \
+./gradlew clean build --warning-mode all --no-daemon
+```
+
 # Le bug qui a vaincu un dragon
 Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait.
 
