@@ -4,6 +4,18 @@
 
 Cette branche contient une version de l'application qui a été transformé en Spring Boot service.
 
+## Étape 1 — Mise à jour vers Spring Boot 2.1.18
+
+L'application utilise désormais Spring Boot `2.1.18.RELEASE`, la dernière
+version corrective de la branche Spring Boot 2.1. Le wrapper Gradle reste en
+version 4.10.3 pour cette étape.
+
+La validation de cette étape est effectuée avec :
+
+```bash
+./gradlew clean build
+```
+
 # Le bug qui a vaincu un dragon
 Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait. 
 
@@ -31,6 +43,5 @@ Cela démarrera votre application.
 
 * Visit http://localhost:9999/dragon/size pour voir le calcul pour l'année en cours
 * Visit http://localhost:9999/dragon/size/year/2019 pour voir le calcul pour l'année 2019.
-
 
 
