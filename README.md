@@ -33,6 +33,19 @@ PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:$PATH \
 ./gradlew clean build --no-daemon
 ```
 
+## Étape 3 — Mise à jour vers Spring Boot 2.3.12
+
+L'application utilise désormais Spring Boot `2.3.12.RELEASE`. Gradle 5.6.4 et
+le JDK 11 sont conservés pour cette étape.
+
+La validation de cette étape est effectuée avec :
+
+```bash
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 \
+PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:$PATH \
+./gradlew clean build --no-daemon
+```
+
 # Le bug qui a vaincu un dragon
 Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait. 
 
