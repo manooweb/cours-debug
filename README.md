@@ -46,6 +46,19 @@ PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:$PATH \
 ./gradlew clean build --no-daemon
 ```
 
+## Étape 4 — Mise à jour vers Gradle 6.8.3
+
+Le Gradle Wrapper utilise désormais Gradle 6.8.3, version compatible avec
+Spring Boot 2.3.12. Le JDK 11 est conservé pour exécuter et valider le build.
+
+La validation de cette étape est effectuée avec :
+
+```bash
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 \
+PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:$PATH \
+./gradlew clean build --no-daemon
+```
+
 # Le bug qui a vaincu un dragon
 Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait. 
 
