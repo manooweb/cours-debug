@@ -140,6 +140,21 @@ La validation de cette étape est effectuée avec :
 ./gradlew clean build --warning-mode all --no-daemon
 ```
 
+## Étape 11 — Exposition JMX des endpoints Actuator
+
+Spring Boot 4 désactive par défaut l'export JMX Spring. Les propriétés
+`spring.jmx.enabled=true` et `management.endpoints.jmx.exposure.include=*`
+activent l'export JMX et rétablissent l'exposition complète des endpoints
+Actuator sous le domaine `org.springframework.boot`, comme avec Spring Boot 2.1.
+
+Le registre MBeans de Tomcat est également activé avec
+`server.tomcat.mbeanregistry.enabled=true`. Un `InMemoryHttpExchangeRepository`
+est déclaré afin d'exposer l'endpoint `Httpexchanges`, qui remplace
+`Httptrace` dans Spring Boot 4.
+
+Après le démarrage de l'application, connectez JConsole au processus Java et
+ouvrez l'onglet **MBeans** pour consulter ce domaine.
+
 # Le bug qui a vaincu un dragon
 Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait.
 
