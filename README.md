@@ -103,6 +103,32 @@ La validation de cette étape est effectuée avec :
 ./gradlew clean build --warning-mode all --no-daemon
 ```
 
+## Étape 8 — Mise à jour vers Spring Boot 3.5.16
+
+L'application utilise désormais Spring Boot `3.5.16`, compatible avec Gradle
+8.14.3 et le JDK 21. La compatibilité de compilation est relevée à Java 17,
+minimum requis par Spring Boot 3. Le projet ne contient pas d'import `javax.*`,
+aucune conversion vers `jakarta.*` n'est nécessaire pour cette étape.
+
+La validation de cette étape est effectuée avec :
+
+```bash
+./gradlew clean build --warning-mode all --no-daemon
+```
+
+## Étape 9 — Mise à jour vers Spring Boot 4.1.0
+
+L'application utilise désormais Spring Boot `4.1.0`, compatible avec Gradle
+8.14.3 et Gradle 9. Le starter Web MVC est renommé
+`spring-boot-starter-webmvc`, conformément à la modularisation de Spring Boot
+4.
+
+La validation de cette étape est effectuée avec :
+
+```bash
+./gradlew clean build --warning-mode all --no-daemon
+```
+
 # Le bug qui a vaincu un dragon
 Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait.
 
