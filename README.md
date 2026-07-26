@@ -155,6 +155,19 @@ est déclaré afin d'exposer l'endpoint `Httpexchanges`, qui remplace
 Après le démarrage de l'application, connectez JConsole au processus Java et
 ouvrez l'onglet **MBeans** pour consulter ce domaine.
 
+## Étape 12 — Préparation de la journalisation
+
+Avec Spring Boot 4.1.0, aucune dépendance `slf4j` ou `logback` n'est déclarée
+directement dans `build.gradle`. Le starter `spring-boot-starter-webmvc`
+apporte transitivement `spring-boot-starter`, qui apporte lui-même
+`spring-boot-starter-logging`. Cette dépendance fournit l'API SLF4J et
+Logback : dans cette version de Spring Boot, Gradle résout respectivement
+SLF4J `2.0.18` et Logback Classic `1.5.34`.
+
+Le BOM `spring-boot-dependencies:4.1.0` est importé comme plateforme Gradle :
+il centralise les versions des starters et des bibliothèques associées, sans
+être embarqué comme une dépendance applicative.
+
 # Le bug qui a vaincu un dragon
 Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait.
 

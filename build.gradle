@@ -30,9 +30,9 @@ jar {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-actuator:4.1.0")
-    implementation("org.springframework.boot:spring-boot-dependencies:4.1.0")
-    implementation("org.springframework.boot:spring-boot-starter-webmvc:4.1.0")
+    implementation(platform("org.springframework.boot:spring-boot-dependencies:4.1.0"))
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.boot:spring-boot-starter-webmvc")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.0-RC1")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.5.0-RC1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.5.0-RC1")
